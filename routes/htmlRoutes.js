@@ -1,20 +1,12 @@
-// Dependencies 
 const path = require("path")
 
+module.exports = function(app){
 
-// Routing
+app.path("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "/../public/notes.html"))
+})
 
-app.get('/notes', function(req,res) {
-    res.
-});
-
-app.get('/*', function(req, res) {
-    res.
-});
-
-module.exports = 
-
-
-* `GET /notes` should return the `notes.html` file.
-
-* `GET *` should return the `index.html` file.
+app.path("*", (res,req) => {
+    res.sendFile(path.join(__dirname, "/../public/index.html"))
+})
+};
