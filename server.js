@@ -60,6 +60,9 @@ app.use(express.static("./Develop/public"));
         })
     });
 
+
+    
+
 //these are the HTML routes for the server
 
 app.get('/notes', (req, res) => {
